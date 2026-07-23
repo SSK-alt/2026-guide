@@ -1,330 +1,292 @@
 @charset "UTF-8";
 
-
 /* ===================================================
    ページ全体のフォントをレトロ風（ＭＳ Ｐゴシック）に統一
    =================================================== */
 body {
-    font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif !important;
-    -webkit-font-smoothing: none !important;
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif !important;
+  -webkit-font-smoothing: none !important;
 }
 
-
-/* ===================================================
-   基本操作編用の追加・上書きスタイル
-   =================================================== */
-
-/* ★Blenderの操作画面スクショを綺麗に見せるための設定
-  main-setting.cssでは「cover（切り抜き）」になっていますが,
-  操作画面全体を端まで見せたい場合は,以下の「contain（全体表示）」がおすすめです。
-*/
 .large-image-container .large-image {
-    object-fit: contain;
-    background-color: #fff; /* 画像の背景を白にして見やすくする */
-    transition: transform 0.3s ease;
+  object-fit: contain;
+  background-color: #fff;
+  transition: transform 0.3s ease;
 }
 
 /* ★大型画像にもマウスを乗せた時の拡大アニメーションを適用する設定 */
 .large-image-container {
-    position: relative;
+  position: relative;
 }
 
 .large-image-container .large-image:hover {
-    
-    position: relative;
-    z-index: 100;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-   
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-
-/* ===================================================
-   基本操作編用の追加・上書きスタイル
-   =================================================== */
 
 /* ★Blenderの操作画面スクショや動画を綺麗に見せるための設定 */
 .large-image-container .large-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* 画面全体を端まで見せる */
-    background-color: #fff; /* 背景を白にして見やすくする */
-    display: block; /* 動画の下にできる謎の隙間を消す */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #fff;
+  display: block;
 }
 
 /* ★大型画像（または動画）の親要素設定 */
 .large-image-container {
-    position: relative;
+  position: relative;
 }
 
-/* ※マウスホバー時の拡大アニメーション設定は,
-  「カーソルに触れたときに拡大されないようにして」というご要望により削除済みです。
-*/
-
-/* ===================================================
-   導入テキスト（基本操作編と画像の間のテキスト）
-   =================================================== */
 .intro-heading {
-    text-align: center;      /* 真ん中に配置 */
-    font-size: 28px;         /* タイトル（基本操作編）と同等の大きさに */
-    font-weight: bold;
-    margin-bottom: 30px;     /* 下の画像との間に少し余白を空ける */
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-/* ===================================================
-   横並びセクション用（画像/動画が左,テキストが右,16:9）
-   =================================================== */
-
-/* 横並びにする設定 */
 .content-section.row-layout {
-    display: flex;
-    align-items: center; 
-    gap: 30px; 
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 /* 画像・動画エリアの設定（左側） */
 .content-section.row-layout .large-image-container {
-    width: 70%; 
-    margin: 0; 
-    
-    aspect-ratio: auto !important; 
-    height: auto !important;
-    align-self: center !important; 
-    
-    /* 上だけ太くして,タイトルバーのように見せる設定 */
-    padding: 35px 8px 8px 8px !important; /* 上35px,右・下・左は8px */
-    border-radius: 8px 8px 4px 4px !important; /* 上の角だけ少し丸くする */
-    
-    /* ★変更：送っていただいた画像の一番下のような,透明感と深みのある立体的な青グラデーション */
-    background: linear-gradient(to bottom, 
-        #154cb8 0%, 
-        #1c5cd9 40%, 
-        #093794 50%, 
-        #011c5c 100%) !important;
-    border: 1px solid #00123d !important;      
-    
-    /* ★変更：内側にグロッシーな質感（上半分の白い光沢）を出すためのハイライトと影 */
-    box-shadow: 
-        inset 0 14px 10px rgba(255, 255, 255, 0.35), /* ぷっくりした光沢 */
-        inset 0 1px 2px rgba(255, 255, 255, 0.6), 
-        0 6px 15px rgba(0,0,0,0.3) !important; 
+  width: 70%;
+  margin: 0;
+
+  aspect-ratio: auto !important;
+  height: auto !important;
+  align-self: center !important;
+
+  padding: 35px 8px 8px 8px !important;
+  border-radius: 8px 8px 4px 4px !important;
+
+  background: linear-gradient(to bottom, #154cb8 0%, #1c5cd9 40%, #093794 50%, #011c5c 100%) !important;
+  border: 1px solid #00123d !important;
+
+  box-shadow:
+    inset 0 14px 10px rgba(255, 255, 255, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    0 6px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* ★最大化ボタン（.max-btn）のコードはここから完全に削除しました */
-
-/* 画像・動画本体の設定（枠にぴったり収まるように） */
 .content-section.row-layout .large-image-container .large-image {
-    width: 100% !important;
-    height: auto !important;       
-    aspect-ratio: auto !important; 
-    display: block !important;
-    background-color: #e8e4d9 !important; /* ウィンドウの中身っぽい少し黄ばんだ白 */
-    border-radius: 0px !important; /* ウィンドウの中身なので角を四角くする */
-    border: 1px solid #000 !important; /* 画面と青枠の境目に細い黒線を入れる */
-    box-shadow: none !important;  
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  display: block !important;
+  background-color: #e8e4d9 !important;
+  border-radius: 0px !important;
+  border: 1px solid #000 !important;
+  box-shadow: none !important;
 }
 
 /* マウスを乗せた時に浮き出る影も消す設定 */
 .content-section.row-layout .large-image-container .large-image:hover {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 /* テキストエリアの設定（右側） */
 .content-section.row-layout .text-content {
-    width: 30%; 
+  width: 30%;
 }
-
-/* ===================================================
-   レトロペイント風 カラーパレット枠のデザイン
-   =================================================== */
 
 /* 外側のグレーの立体枠 */
 .xp-palette-box {
-    background-color: #c0c0c0; /* 昔のWindowsの標準的なグレー背景 */
-    padding: 20px;
-    margin-top: 10px;
-    color: #000000; /* 背景がグレーなので文字を黒に固定 */
-    
-    /* ★追加：レトロなフォント設定（ＭＳ Ｐゴシック）とドット感の強調 */
-    font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif;
-    -webkit-font-smoothing: none; 
-    
-    /* ウィンドウ全体が「出っ張って」見えるレトロな枠線 */
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
-    box-shadow: inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  background-color: #c0c0c0;
+  padding: 20px;
+  margin-top: 10px;
+  color: #000000;
+
+  /* ★追加：レトロなフォント設定（ＭＳ Ｐゴシック）とドット感の強調 */
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif;
+  -webkit-font-smoothing: none;
+
+  /* ウィンドウ全体が「出っ張って」見えるレトロな枠線 */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow:
+    inset -2px -2px #808080,
+    inset 2px 2px #dfdfdf;
 }
 
 .xp-marker-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .xp-marker-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px; 
-    font-size: 22px;     
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* 最後の項目の下の余白を消す */
 .xp-marker-list li:last-child {
-    margin-bottom: 0
+  margin-bottom: 0;
 }
 
 /* ペイントのカラーパレットのように「へこんで」見える四角枠 */
 .xp-marker {
-    display: inline-block;
-    width: 24px;         
-    height: 24px;        
-    margin-right: 15px;  
-    
-    /* へこみ（Inset）を表現するレトロな枠線 */
-    border-top: 2px solid #808080;
-    border-left: 2px solid #808080;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    box-sizing: border-box;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+
+  /* へこみ（Inset）を表現するレトロな枠線 */
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-sizing: border-box;
 }
 
 /* 各マークの色設定 */
-.bg-purple { background-color: #800080; }
-.bg-blue   { background-color: #0000FF; }
-.bg-green  { background-color: #008000; }
-.bg-yellow { background-color: #FFFF00; } 
-.bg-red    { background-color: #FF0000; }
+.bg-purple {
+  background-color: #800080;
+}
+.bg-blue {
+  background-color: #0000ff;
+}
+.bg-green {
+  background-color: #008000;
+}
+.bg-yellow {
+  background-color: #ffff00;
+}
+.bg-red {
+  background-color: #ff0000;
+}
 
 /* ★スマホ対応：画面幅が768px以下の時は縦並びにする */
 @media screen and (max-width: 768px) {
-    .content-section.row-layout {
-        flex-direction: column; 
-    }
-    
-    .content-section.row-layout .large-image-container,
-    .content-section.row-layout .text-content {
-        width: 100%; 
-    }
+  .content-section.row-layout {
+    flex-direction: column;
+  }
+
+  .content-section.row-layout .large-image-container,
+  .content-section.row-layout .text-content {
+    width: 100%;
+  }
 }
-
-
-
-/* ===================================================
-   テキストエリアの高さを動画枠に合わせる設定
-   =================================================== */
 
 /* 左右（動画枠とテキスト）の高さを揃える */
 .content-section.row-layout {
-    align-items: stretch !important;
+  align-items: stretch !important;
 }
 
 /* 左側の動画枠の「中央揃え」を解除して,高さを完全に揃える */
 .content-section.row-layout .large-image-container {
-    align-self: stretch !important;
+  align-self: stretch !important;
 }
 
 /* 右側のテキストエリアの設定（上寄せに変更） */
 .content-section.row-layout .text-content {
-    display: flex;
-    flex-direction: column;
-    
-    /* ★変更：space-between（上下に離す）から flex-start（上寄せ）に変更 */
-    justify-content: flex-start; 
-    
-    /* 動画の「青いタイトルバー」と見た目の高さを合わせるための微調整 */
-    padding-top: 15px; 
-    padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+  /* ★変更：space-between（上下に離す）から flex-start（上寄せ）に変更 */
+  justify-content: flex-start;
+
+  /* 動画の「青いタイトルバー」と見た目の高さを合わせるための微調整 */
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 /* ★追加：タイトルと解説文が近すぎる場合は,ここで距離を調整できます */
 .content-section.row-layout .text-content p:not(.step-title) {
-    margin-top: 20px; /* タイトルと解説文の間の余白 */
+  margin-top: 20px; /* タイトルと解説文の間の余白 */
 }
-
-/* ===================================================
-   一番上の画像だけ青い枠を外す設定
-   =================================================== */
 
 /* 最初の横並びセクション（一番上の画像）をターゲットにする */
 .content-section.row-layout:first-of-type .large-image-container {
-    background: none !important; /* 青いグラデーションを消す */
-    border: none !important; /* 枠線を消す */
-    box-shadow: none !important; /* 立体感（影やハイライト）を消す */
-    padding: 0 !important; /* タイトルバー用の余白をなくす */
-    border-radius: 0 !important; /* 角丸をリセット */
+  background: none !important; /* 青いグラデーションを消す */
+  border: none !important; /* 枠線を消す */
+  box-shadow: none !important; /* 立体感（影やハイライト）を消す */
+  padding: 0 !important; /* タイトルバー用の余白をなくす */
+  border-radius: 0 !important; /* 角丸をリセット */
 }
 
 /* 一番上の画像の中身（imgタグ）の設定もリセット */
 .content-section.row-layout:first-of-type .large-image-container .large-image {
-    border: none !important; /* 黒い細線を消す */
-    background-color: transparent !important; /* 背景色を透明に戻す */
+  border: none !important; /* 黒い細線を消す */
+  background-color: transparent !important; /* 背景色を透明に戻す */
 }
 
 /* ===================================================
    タイトル（基本操作編）の背景色を専用色に変更
    =================================================== */
 .page-title {
-    /* ★ホーム画面の「基本操作編」ボタンと同じ色で上書き */
-    background: linear-gradient(180deg, rgba(255, 44, 0, 0.65) 0%, rgba(255, 106, 0, 0.65) 49.96%, rgba(255, 223, 200, 0.65) 100%) !important;
+  /* ★ホーム画面の「基本操作編」ボタンと同じ色で上書き */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 44, 0, 0.65) 0%,
+    rgba(255, 106, 0, 0.65) 49.96%,
+    rgba(255, 223, 200, 0.65) 100%
+  ) !important;
 }
 
-/* ===================================================
-   アイコンとテキストのセット（➀ 視点の回転 の下など）
-   =================================================== */
 .icon-text-box {
-    display: flex;
-    align-items: center; /* アイコンと文字を縦の中央で揃える */
-    margin-top: 25px;    /* 上の説明文とのすき間 */
-    background-color: #fdfaf0; /* 薄い黄色の背景をつけて目立たせる（不要なら消してOK） */
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: fit-content;  /* 中身の長さに合わせて枠を縮める */
+  display: flex;
+  align-items: center; /* アイコンと文字を縦の中央で揃える */
+  margin-top: 25px; /* 上の説明文とのすき間 */
+  background-color: #fdfaf0; /* 薄い黄色の背景をつけて目立たせる（不要なら消してOK） */
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: fit-content; /* 中身の長さに合わせて枠を縮める */
 }
 
 /* ★ custom-icon を mouse-icon に変更し,スタイルを一新 */
 .mouse-icon {
-    /* 💡 font-size: 26px; */ /* 💡 margin-right: 12px; */ /* 💡 font-size: 26px; は不要。余白は引き継ぐ */
-    display: inline-block;
-    width: 18px;             /* マウスの幅 */
-    height: 30px;            /* マウスの高さ（テキストのサイズに合わせる） */
-    background-color: #fff;  /* マウスの色（白） */
-    border: 2px solid #000; /* マウスの枠線（黒） */
-    border-radius: 8px;      /* 大きな角丸 */
-    position: relative;       /* 内部の中ボタンを配置するため */
-    margin-right: 12px;       /* 右側の文字とのすき間（元の custom-icon から引き継ぐ） */
+  /* 💡 font-size: 26px; */ /* 💡 margin-right: 12px; */ /* 💡 font-size: 26px; は不要。余白は引き継ぐ */
+  display: inline-block;
+  width: 18px; /* マウスの幅 */
+  height: 30px; /* マウスの高さ（テキストのサイズに合わせる） */
+  background-color: #fff; /* マウスの色（白） */
+  border: 2px solid #000; /* マウスの枠線（黒） */
+  border-radius: 8px; /* 大きな角丸 */
+  position: relative; /* 内部の中ボタンを配置するため */
+  margin-right: 12px; /* 右側の文字とのすき間（元の custom-icon から引き継ぐ） */
 }
 
 /* ★中ボタン（スクロールホイール）をCSS仮想要素で描画 */
 .mouse-icon::before {
-    content: "";
-    display: block;
-    width: 4px;              /* 中ボタンの幅 */
-    height: 8px;             /* 中ボタンの高さ（縦長） */
-    background-color: #000;  /* 中ボタンの色（黒） */
-    border-radius: 50px;     /* 完全に丸める */
-    position: absolute;      /* 配置 */
-    top: 20%;                /* 上から20%の位置 */
-    left: 50%;               /* 中央 */
-    transform: translateX(-50%); /* 中央にぴったり合わせる */
+  content: "";
+  display: block;
+  width: 4px; /* 中ボタンの幅 */
+  height: 8px; /* 中ボタンの高さ（縦長） */
+  background-color: #000; /* 中ボタンの色（黒） */
+  border-radius: 50px; /* 完全に丸める */
+  position: absolute; /* 配置 */
+  top: 20%; /* 上から20%の位置 */
+  left: 50%; /* 中央 */
+  transform: translateX(-50%); /* 中央にぴったり合わせる */
 }
 
 .icon-text {
-    font-size: 22px;     /* 文字の大きさ */
-    font-weight: bold;   /* 太字にする */
-    color: #333;
+  font-size: 22px; /* 文字の大きさ */
+  font-weight: bold; /* 太字にする */
+  color: #333;
 }
 
 .custom-icon {
-    font-size: 26px;     /* アイコンの大きさ */
-    margin-right: 12px;  /* 右側の文字とのすき間 */
+  font-size: 26px; /* アイコンの大きさ */
+  margin-right: 12px; /* 右側の文字とのすき間 */
 }
 
 .icon-text {
-    font-size: 22px;     /* 文字の大きさ */
-    font-weight: bold;   /* 太字にする */
-    color: #333;
+  font-size: 22px; /* 文字の大きさ */
+  font-weight: bold; /* 太字にする */
+  color: #333;
 }
 
 /* ===================================================
@@ -337,44 +299,43 @@ body {
 
 /* 左側：「←メイン設定編」はそのまま小さいサイズをキープ */
 .bottom-nav .btn-home {
-    width: 160px !important;
-    min-width: 160px !important;
-    max-width: 160px !important;
-    height: 60px !important;
-    padding: 0 !important;
-    font-size: 16px !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
+  width: 160px !important;
+  min-width: 160px !important;
+  max-width: 160px !important;
+  height: 60px !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
 }
 
 /* 右側：「ホームに戻る」はメイン設定編の「基本操作編」と同じ大きなサイズに戻す */
 .bottom-nav .btn-next {
-    width: 400px !important;
-    max-width: 100% !important;
-    height: 80px !important;
-    font-size: 32px !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
+  width: 400px !important;
+  max-width: 100% !important;
+  height: 80px !important;
+  font-size: 32px !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
 }
 
 /* レスポンシブ調整（スマホ表示時） */
 @media screen and (max-width: 768px) {
-    /* スマホでは縦並びになるので,それぞれのサイズをスマホ用に最適化 */
-    .bottom-nav .btn-home {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 50px !important;
-        font-size: 18px !important;
-    }
-    .bottom-nav .btn-next {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 60px !important;
-        font-size: 24px !important;
-    }
+  /* スマホでは縦並びになるので,それぞれのサイズをスマホ用に最適化 */
+  .bottom-nav .btn-home {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+  .bottom-nav .btn-next {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 60px !important;
+    font-size: 24px !important;
+  }
 }
-
 
 /* ===================================================
    基本操作編の文字サイズを独自に調整（上書き）
@@ -382,95 +343,104 @@ body {
 
 /* 手順のタイトル（「➀ 視点の回転」など）の文字サイズ */
 .step-title {
-    font-size: 20px !important; /* 元の28pxから少し小さく */
+  font-size: 20px !important; /* 元の28pxから少し小さく */
 }
 
 /* 手順の解説文の文字サイズ */
 .text-content p:not(.step-title) {
-    font-size: 20px !important; /* 元の24pxから標準的なサイズに */
-    line-height: 1.6 !important; /* 文字が小さくなる分,行間も少しだけ詰める */
+  font-size: 20px !important; /* 元の24pxから標準的なサイズに */
+  line-height: 1.6 !important; /* 文字が小さくなる分,行間も少しだけ詰める */
 }
 
 /* ===================================================
    完了メッセージの文字サイズを調整
    =================================================== */
 h2.finish-text {
-    font-size: 22px !important; /* 元の28pxから小さくする（好みに合わせて数値を変更してください） */
+  font-size: 22px !important; /* 元の28pxから小さくする（好みに合わせて数値を変更してください） */
 }
 
 /* ===================================================
    追加：キーボードのキーキャップ（レトロ立体枠）
    =================================================== */
 .key-cap {
-    display: inline-block;
-    background-color: #fff;
-    color: #000;
-    font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 2px 10px;
-    margin: 0 5px;
-    border: 1px solid #000;
-    /* レトロな凸枠 */
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
-    border-radius: 4px;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    text-align: center;
-    vertical-align: middle;
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 2px 10px;
+  margin: 0 5px;
+  border: 1px solid #000;
+  /* レトロな凸枠 */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* 軸ごとのカラー（ほんのり色づけ） */
-.key-cap.x-axis { background-color: #FFDDDD; color: #CC0000; } /* ほんのり赤 */
-.key-cap.y-axis { background-color: #DDFFDD; color: #008800; } /* ほんのり緑 */
-.key-cap.z-axis { background-color: #DDDDFF; color: #0000CC; } /* ほんのり青 */
+.key-cap.x-axis {
+  background-color: #ffdddd;
+  color: #cc0000;
+} /* ほんのり赤 */
+.key-cap.y-axis {
+  background-color: #ddffdd;
+  color: #008800;
+} /* ほんのり緑 */
+.key-cap.z-axis {
+  background-color: #ddddff;
+  color: #0000cc;
+} /* ほんのり青 */
 
 /* ===================================================
    追加：軸移動の図専用の調整（icon-text-box拡張）
    =================================================== */
 .icon-text-box.axis-moving-info {
-    flex-direction: column; /* 縦に並べる */
-    align-items: flex-start; /* 左寄せ */
-    padding: 15px 20px;
-    margin-top: 30px; /* 説明文とのすき間 */
+  flex-direction: column; /* 縦に並べる */
+  align-items: flex-start; /* 左寄せ */
+  padding: 15px 20px;
+  margin-top: 30px; /* 説明文とのすき間 */
 }
 
 .axis-diagram-intro {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 0 15px 0;
-    color: #555;
-    text-decoration: underline; /* 軽く強調 */
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  color: #555;
+  text-decoration: underline; /* 軽く強調 */
 }
 
 .axis-diagram-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .diagram-separator {
-    font-size: 16px;
-    color: #333;
+  font-size: 16px;
+  color: #333;
 }
 
 .axis-choices {
-    display: flex;
-    flex-direction: column; /* X,Y,Zを縦に並べる */
-    gap: 8px;
-    border-left: 1px solid #ccc; /* 軽く区切り線 */
-    padding-left: 15px;
-    margin-left: 10px;
+  display: flex;
+  flex-direction: column; /* X,Y,Zを縦に並べる */
+  gap: 8px;
+  border-left: 1px solid #ccc; /* 軽く区切り線 */
+  padding-left: 15px;
+  margin-left: 10px;
 }
 
 .axis-choice {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .diagram-text {
-    font-size: 18px;
-    color: #333;
+  font-size: 18px;
+  color: #333;
 }
