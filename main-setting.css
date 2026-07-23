@@ -1,0 +1,449 @@
+/* ===================================================
+   ページ全体のフォントをレトロ風（ＭＳ Ｐゴシック）に統一
+   =================================================== */
+body {
+    font-family: "ＭＳ Ｐゴシック", "MS PGothic", Tahoma, sans-serif !important;
+    -webkit-font-smoothing: none !important;
+}
+
+/* =========================================
+   記事ページ (main-setting.html) 用のスタイル
+   ========================================= */
+
+/* 記事ページ全体（幅は .container で1280pxに固定済み） */
+.article-page {
+    padding: 60px 80px 100px; /* 上・左右・下の余白 */
+    background-color: #FAF8F0;
+}
+
+/* ページ最上部のタイトル「メイン設定編」 */
+.page-title {
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 50px;
+    
+    /* ★変更：四角く囲い、文字を中央に配置する */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #000000; /* 黒い四角枠 */
+    
+    /* ★変更：ホーム画面の「メイン設定編」ボタンと同じ色と文字装飾 */
+    background: linear-gradient(180deg, #FF2C00 0%, #FF6A00 49.95%, #FFD6B9 100%);
+    color: #ffffff;
+    -webkit-text-stroke: 1px #000000; /* 文字の黒い縁取り（タイトル用に少し太め） */
+}
+
+/* 各項目のまとまり */
+.content-section {
+    margin-bottom: 80px;
+}
+
+/* 小見出し「① Blenderとは？」など */
+.content-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* トップページの丸アイコンと同じように、文字の下に青いバーを引く */
+.content-section h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #001aff; 
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+/* 本文テキスト */
+.content-section p {
+    font-size: 20px;
+    line-height: 2.0; /* 読みやすいように行間を広めに */
+    margin-bottom: 20px;
+}
+
+/* リンク文字 */
+.content-section a {
+    color: #001aff;
+    font-weight: bold;
+}
+
+/* 画像が入るグレーの箱（仮） */
+.image-box {
+    width: 100%;
+    max-width: 800px; 
+    height: 350px;
+    background-color: #e6e6e6; /* 薄いグレー */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0; /* 上下の中央に配置 */
+    color: #666;
+    font-weight: bold;
+}
+
+/* 設定手順などのリスト部分 */
+.setting-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.setting-list li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 25px;
+    background-color: #fff; /* 背景を白にして目立たせる */
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.setting-list li strong {
+    font-size: 18px;
+    color: #001aff;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ============================
+   戻るボタン
+   ============================ */
+.back-btn-wrap {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 30px;
+    box-shadow: 0 4px 0 #000;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(4px);
+    box-shadow: none; /* 押したように見せる */
+}
+
+/* ============================
+   スマホ用の調整（レスポンシブ）
+   ============================ */
+@media screen and (max-width: 768px) {
+    .article-page {
+        padding: 40px 20px 80px; /* スマホでは左右の余白を狭くする */
+    }
+    
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .content-section h2 {
+        font-size: 20px;
+    }
+
+    .image-box {
+        height: 200px; /* 画像エリアを小さく */
+    }
+}
+
+/* =========================================
+   画像とテキストの横並びレイアウト（メイン設定編など）
+   ========================================= */
+
+.flex-row {
+    display: flex;
+    align-items: flex-start; /* 上で揃える */
+    gap: 40px;               /* 画像とテキストの間のすき間 */
+    margin-top: 20px;
+}
+
+/* 左側の画像ボックスを調整（★数値を大きく変更） */
+.flex-row .side-image {
+    flex: 0 0 475px; /* ★幅を300pxから450pxに大きくしました */
+    height: 380px;   /* ★高さを220pxから320pxに大きくしました */
+    margin: 0;       
+}
+
+/* 画像自体が枠からはみ出さないための設定（変更なし） */
+.flex-row .side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 枠に合わせて綺麗に収める設定 */
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+/* 画像自体の設定 */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ★ coverからcontainに変更（画像が見切れないように全体を表示） */
+    border-radius: 7px;
+    background-color: #fff; /* 余白ができた場合のために白背景を敷く */
+    transition: transform 0.3s ease; /* ★拡大するアニメーションを滑らかにする */
+}
+
+
+
+
+/* =========================================
+   特定の小見出しの青いバーを消す設定
+   ========================================= */
+.content-section h2.no-bar::after {
+    display: none; /* ★青いバーを表示しない */
+}
+
+/* =========================================
+   手順のタイトル設定（パターンA：左縦棒付き小見出し）
+   ========================================= */
+.step-title {
+    font-size: 28px;              /* 文字を大きく */
+    color: #333;                  /* 文字色は引き締まるように少し濃いめに */
+    margin-bottom: 20px;          /* 下の解説文とのすき間 */
+    margin-top: 0;
+    padding-left: 15px;           /* 左側の縦棒と文字の間のすき間 */
+    border-left: 6px solid #488DFF; /* 左側に青い縦棒を引いて見出しらしくする */
+    line-height: 1.2;
+    font-weight: bold;            /* 太字にする */
+}
+
+/* =========================================
+   手順の解説文の設定
+   ========================================= */
+.text-content p:not(.step-title) {
+    font-size: 24px; /* ★標準の20pxから22pxにサイズアップ（もっと大きくしたい場合は24pxなどに変更してください） */
+    line-height: 1.8; /* ★行間を少し開けてスッキリ見せる */
+    font-weight: 500; /* ★文字をほんの少し太くして読みやすくする */
+    color: #333;
+}
+
+
+/* =========================================
+   下部の大型画像設定 (1100px x 600px)
+   ========================================= */
+.large-image-container {
+    width: 100%;
+    max-width: 1913px;
+    height: 1049px;
+    margin: 60px auto;
+    background-color: #e6e6e6; /* 画像がない時のグレー背景 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .large-image-container {
+        height: 300px; /* スマホでは高さを縮める */
+    }
+}
+
+/* =========================================
+   画像(左50%) と テキスト(右) のレイアウト（大型画像の下用）
+   ========================================= */
+.flex-half-row {
+    display: flex;
+    align-items: flex-start; /* 上揃え */
+    gap: 40px;               /* 画像とテキストの隙間 */
+    margin-top: 20px;
+}
+
+/* 左側の画像ボックス（幅を50%に指定） */
+.flex-half-row .half-image-box {
+    flex: 0 0 50%;           /* コンテナの50%（半分）の幅にする */
+    background-color: #e6e6e6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 画像自体の設定 */
+.flex-half-row .half-image-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* 右側のテキスト設定（必要に応じて幅を調整） */
+.flex-half-row .text-content {
+    flex: 1; /* 残りのスペースをすべてテキストエリアにする */
+}
+
+/* ============================
+   スマホ用の調整（レスポンシブ）
+   ============================ */
+@media screen and (max-width: 768px) {
+    .flex-half-row {
+        flex-direction: column; /* スマホでは縦並びに変更 */
+        gap: 20px;
+    }
+    
+    .flex-half-row .half-image-box {
+        flex: 0 0 auto;
+        width: 100%; /* スマホでは幅100%にする */
+    }
+}
+
+/* =========================================
+   一番最後の完了メッセージ用の設定
+   ========================================= */
+h2.finish-text {
+    font-size: 28px;
+    text-align: center; /* 文字を真ん中に配置 */
+    display: block;     /* 中央揃えを効かせるために設定 */
+    margin-top: 60px;   /* 上のコンテンツとの間に余白を作る */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 青いアンダーバーを強制的に消す */
+h2.finish-text::after {
+    display: none !important; 
+}
+
+/* =========================================
+   ページ下部ナビゲーションボタン
+   ========================================= */
+.bottom-nav {
+    display: flex;
+    justify-content: space-between; /* ボタンを左右に振り分ける */
+    align-items: center;
+    margin-top: 80px;               /* 上の完了テキストとの間隔 */
+}
+
+/* ボタン共通設定 */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000 !important; /* ★修正：!importantを追加して確実に黒にする */
+    font-weight: bold;
+    border: 1px solid #000; /* 黒い細枠 */
+    border-radius: 60px;    /* 楕円形にする（角丸） */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* マウスを乗せた時のアクション */
+.nav-btn:hover {
+    transform: translateY(3px); /* 少し下に押し込まれる動き */
+    opacity: 0.9;
+}
+
+/* 左側：ホームボタン（赤） */
+.btn-home {
+    width: 160px;
+    height: 60px;
+    font-size: 20px;
+    /* 上部が白、下部が赤になるグラデーション */
+    background: linear-gradient(to bottom, #ffffff 0%, #c94b41 100%);
+}
+
+/* 右側：次へボタン（青） */
+.btn-next {
+    width: 400px;
+    height: 80px;
+    font-size: 32px;
+    /* 上下が白、真ん中が青になる筒状のグラデーション */
+    background: linear-gradient(to bottom, #ffffff 0%, #5398ff 50%, #ffffff 100%);
+}
+
+/* ============================
+   スマホ用の調整（レスポンシブ）
+   ============================ */
+@media screen and (max-width: 768px) {
+    .bottom-nav {
+        flex-direction: column-reverse; /* スマホでは「次へ」を上、「ホーム」を下に並べる */
+        gap: 30px;
+    }
+
+    /* スマホ表示時の文字サイズ微調整 */
+    .step-title {
+        font-size: 22px; /* スマホでは大きすぎない22px程度に調整 */
+    }
+    .text-content p:not(.step-title) {
+        font-size: 18px;
+    }
+    
+    .btn-home {
+        width: 100%;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .btn-next {
+        width: 100%;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
+/* =========================================
+   手順と手順の間の区切り線（黒い横棒）
+   ========================================= */
+hr.section-divider {
+    border: 0;
+    border-top: 2px solid #333; /* 線の太さと色（濃いグレー〜黒） */
+    margin: 60px 0; /* 上下のすき間（好みに合わせて数値を変更してください） */
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    hr.section-divider {
+        margin: 40px 0; /* スマホ表示のときは上下のすき間を少し狭くする */
+    }
+}
+
+/* =========================================
+   スマホ用の調整（① Blenderとは？のレイアウト修正）
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* スマホでは横並びを縦並びに変更する */
+    .flex-row {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    /* 巨大な隙間ができる原因だった「画像の高さ」をスマホ用に縮める */
+    .flex-row .side-image {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        height: 220px !important; /* 380pxから220pxに縮めて空白をなくす */
+    }
+
+    /* 各項目のまとまりの隙間（元は80px）をスマホでは少し狭くする */
+    .content-section {
+        margin-bottom: 50px !important;
+    }
+}
+

@@ -1,0 +1,286 @@
+/* ベース設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #FAF8F0; /* Figmaから取得した背景色 */
+    color: #333;
+}
+
+/* 全体のコンテナ (幅1280pxの中央揃え) */
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #FAF8F0;
+    min-height: 100vh;
+}
+
+/* ヒーローセクション (トップの黒い部分) */
+.hero {
+    background-color: #1a1a1a; /* 実際の画像や動画が入る想定 */
+    
+    /* ★変更：固定サイズを解除し、画面に合わせて自動伸縮させる */
+    width: 100%; 
+    height: 80vh; /* 画面の高さの80%にする（100vhにすると画面ぴったりになります） */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 動画のはみ出しを防ぎ、この枠内に収めるための設定 */
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* ★新規追加：背景動画用の設定 (※ここは現在のままでOKです) */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 縦横比を維持したまま、枠いっぱいに敷き詰める */
+    z-index: 1;        /* 文字より後ろに配置する */
+    opacity: 0.7;      /* 少し透明にして暗くし、文字を読みやすくする（1.0で本来の明るさ） */
+}
+
+/* ★変更：文字が動画の下敷きにならないように設定を追加 */
+.hero h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    
+    /* ★追加：動画の上に文字を配置し、見やすくする設定 */
+    position: relative; 
+    z-index: 2; /* 動画(z-index:1)より手前に出す */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* 文字に影をつけて読みやすくする */
+}
+
+/* 説明文のブルーのバナー */
+.intro-banner {
+    /* ここにFigmaのグラデーションと黒枠を適用 */
+    background: linear-gradient(180deg, rgba(250, 248, 240, 0.24) -5.02%, #488DFF 47.49%, #FAF8F0 100%);
+    border: 1px solid #000;
+    padding: 40px 80px;
+    text-align: center;
+}
+
+/* 説明文のブルーのバナー内のテキスト */
+.intro-banner p {
+    margin: 0 auto;          /* 念のため中央配置の指定 */
+    font-size: 16px;
+    line-height: 2.0;        /* 行間を少し広げる（1.8→2.0）とさらに読みやすくなります */
+    font-weight: bold;
+    color: #222;
+    display: inline-block;   /* ここがポイント：テキストのカタマリ（ブロック）にする */
+    text-align: left;        /* カタマリの中の文字は「左揃え」にして端を揃える */
+}
+
+/* 記事一覧セクション */
+.article-section {
+    padding: 50px 70px; /* 中身が綺麗に収まるように内側の余白を少し調整 */
+    
+    /* ★変更：幅を中身に合わせ、上の青い枠にくっつける */
+    width: fit-content;       /* 枠の幅を、中身（ボタン＋文章）の長さにぴったり合わせる */
+    margin: 0 auto 60px auto; /* 上余白を0にして青枠に密着させ、左右は中央揃え、下余白は60px */
+    
+    /* XP風のグレー背景と立体的な枠線 */
+    background-color: #c0c0c0; 
+    border-top: 2px solid #ffffff !important;
+    border-left: 2px solid #ffffff !important;
+    border-right: 2px solid #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+    box-shadow: inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+}
+
+/* ※重複していた h2 の設定はこちらの1つにまとめました */
+.article-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    color: #000; /* 背景がグレーなので文字色を黒に固定 */
+}
+
+
+/* 記事の各項目のレイアウト */
+.article-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 40px; /* 丸とテキストの間の余白 */
+}
+
+/* 丸いアイコン（グラデーション） */
+.circle-icon {
+    width: 140px;
+    max-width: 25vw; 
+    aspect-ratio: 1 / 1; 
+    height: auto; 
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    
+    /* ★変更：XP風のツヤ（ハイライトと内側の影）を追加 */
+    box-shadow: 
+        inset 0 15px 15px rgba(255, 255, 255, 0.5), /* 上半分の白い光沢 */
+        inset 0 -10px 10px rgba(0, 0, 0, 0.15),     /* 下半分の影 */
+        0 6px 12px rgba(0, 0, 0, 0.3) !important;   /* アイコン外側の落ち影 */
+    
+    transition: all 0.3s ease; 
+    text-decoration: none; 
+}
+
+/* 文字の下の青いバー */
+.circle-icon::after {
+    display: none; /* ★青いバーを非表示にする */
+}
+
+/* 丸いアイコンにカーソルが乗った時（ホバー時）のスタイル */
+.circle-icon:hover {
+    transform: translateY(-4px); /* 動きを少し控えめに */
+    /* ★変更：カーソルが乗った時に光沢を少し強める */
+    box-shadow: 
+        inset 0 15px 15px rgba(255, 255, 255, 0.6), 
+        inset 0 -10px 10px rgba(0, 0, 0, 0.1),
+        0 10px 16px rgba(0, 0, 0, 0.4) !important; 
+    cursor: pointer; 
+}
+
+/* 各丸アイコンの固有グラデーション */
+.bg-orange { 
+    background: linear-gradient(180deg, #FF2C00 0%, #FF6A00 49.95%, #FFD6B9 100%);
+    border: 1px solid #000; 
+    -webkit-text-stroke: 0.7px #000; 
+    font-size: 22px;
+}
+.bg-light-orange { 
+    background: linear-gradient(180deg, rgba(255, 44, 0, 0.65) 0%, rgba(255, 106, 0, 0.65) 49.96%, rgba(255, 223, 200, 0.65) 100%);
+    border: 1px solid #000; 
+    -webkit-text-stroke: 0.7px #000; 
+    font-size: 22px;
+}
+
+/* リストテキスト */
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 350px; 
+}
+
+.article-list li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/* ====================================================
+   スマホ・タブレット用のレスポンシブ対応（画面が小さい時のルール）
+   ==================================================== */
+@media screen and (max-width: 768px) {
+
+    /* ★新規追加：スマホ画面では映像枠の縦幅を少し短くし、タイトル文字も小さくする */
+    .hero {
+        height: 50vh; 
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .article-item {
+        gap: 20px; /* アイコンとテキストの隙間を少し狭くする */
+    }
+    
+    .article-item {
+        gap: 20px; /* アイコンとテキストの隙間を少し狭くする */
+    }
+
+    /* アイコン内の文字サイズを画面に合わせて小さくする */
+    .bg-orange, .bg-light-orange {
+        font-size: clamp(12px, 3.5vw, 22px);
+    }
+
+    /* 青いバーの太さを少し細くする */
+    .circle-icon::after {
+        height: 4px;
+    }
+
+    /* リスト部分の幅を可変にする */
+    .article-list {
+        width: auto;
+        flex: 1; /* 余ったスペースを埋める */
+    }
+
+    /* ★追加：スマホ表示の時は灰色の枠の余白を狭くする */
+    .article-section {
+        margin: 20px;
+        padding: 40px 20px;
+    }
+
+    /* ★追加：スマホ表示の時は幅を自動に戻し、左右に少し隙間を作る */
+    .article-section {
+        width: auto;              /* スマホでは画面幅に合わせて伸縮させる */
+        margin: 0 15px 40px 15px; /* 上は0のまま、左右に15pxの余白を作る */
+        padding: 40px 20px;
+    }
+}
+
+/* さらに画面が小さいスマホ（縦長）の場合のルール */
+@media screen and (max-width: 480px) {
+    .article-item {
+        flex-direction: column; /* アイコンとリストを「縦並び」にする */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .circle-icon {
+        max-width: 120px; /* スマホでは丸がこれ以上小さくならないようにする */
+        width: 100%;
+    }
+    
+    .bg-orange, .bg-light-orange {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   バージョン・環境の注意書き枠 (ホーム画面用)
+   ========================================= */
+.notice-box {
+    background-color: #FFF4E5; /* 薄いオレンジ背景 */
+    border: 2px solid #FF8C00; /* 濃いオレンジの枠線 */
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 30px auto 0 auto; /* 上の文章との間に30pxの余白を作る */
+    max-width: 700px;         /* 幅が広がりすぎないように制限 */
+    text-align: center;
+}
+
+/* 注意書きの中のテキスト専用の指定 */
+.intro-banner .notice-box p {
+    margin: 0 auto; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #D35400; 
+    display: block;      /* 左揃えの設定を解除して中央に配置 */
+    text-align: center; 
+}
+
+/* スマホ用の調整 */
+@media screen and (max-width: 768px) {
+    .notice-box {
+        padding: 10px;
+        margin-top: 20px; /* スマホでは少し余白を狭める */
+    }
+    .intro-banner .notice-box p {
+        font-size: 14px;  /* スマホでは文字を少し小さく */
+    }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本操作編 - Blenderを動かしてみよう</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="main-setting.css">
+    <link rel="stylesheet" href="basic-operation.css">
+</head>
+<body>
+
+    <div class="container article-page">
+        
+        <h1 class="page-title">基本操作編</h1>
+
+        <div class="intro-heading">次はBlenderの基本操作について解説します</div>
+
+        <section class="content-section row-layout">
+            <!-- 画像（左側） -->
+            <div class="large-image-container">
+                <img src="IMG/4_1.png" alt="Blenderの最初の画面" class="large-image">
+            </div>
+            <!-- テキスト（右側） -->
+            <div class="text-content">
+                <!-- レトロなペイント風の枠（パレットコンテナ） -->
+                <div class="xp-palette-box">
+                    <ul class="xp-marker-list">
+                        <li><span class="xp-marker bg-purple"></span>紫：トップバー</li>
+                        <li><span class="xp-marker bg-blue"></span>青：アウトライナー</li>
+                        <li><span class="xp-marker bg-green"></span>緑：3Dビュー</li>
+                        <li><span class="xp-marker bg-yellow"></span>黄：タイムライン</li>
+                        <li><span class="xp-marker bg-red"></span>赤：プロパティ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="intro-heading" style="margin-top: 50px;">
+            Blenderは上の5つの画面で構成されています。<br>
+            今回は主に「3Dビュー」を使っていきます。
+        </div>
+
+        <hr class="section-divider">
+        
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/View_rotation.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➀ 視点の回転</strong></p>
+                <p>・マウスの中ボタンを押したままマウスを動かすと、視点を回転させることができます。</p>
+                
+                <!-- アイコンとテキストの項目 -->
+                <div class="icon-text-box">
+                    <span class="mouse-icon"></span>
+                    <span class="icon-text">: ➀視点の回転</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/View_moving.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➁ 視点の移動</strong></p>
+                <p>・shift＋マウスの中ボタンで、視点を平行に移動させることができます。</p>
+                
+                <!-- ★追加：アイコンとテキストの項目（Shiftを前に追加） -->
+                <div class="icon-text-box">
+                    <span class="icon-text" style="margin-right: 10px;">Shift ＋ </span>
+                    <span class="mouse-icon"></span>
+                    <span class="icon-text">: ➁視点の移動</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/View_zoom.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➂ ズーム・ズームアウト</strong></p>
+                <p>・マウスホイールを回すと、ズーム＆ズームアウトができます。</p>
+                
+                <!-- ★追加：アイコンとテキストの項目 -->
+                <div class="icon-text-box">
+                    <span class="mouse-icon"></span>
+                    <span class="icon-text">: ➂ズーム・ズームアウト</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/Object_delete.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➃ オブジェクトの削除と追加：「削除」</strong></p>
+                <p>・デフォルトでは最初に、立方体のオブジェクトが表示されています。この立方体を削除するときは、Xキーを押して「削除」を選択します。</p>
+
+                <div class="icon-text-box">
+                    <span class="icon-text">Xキー : ➃オブジェクトの削除</span>
+                </div>
+                
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/Object_add.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➃ オブジェクトの削除と追加：「追加」</strong></p>
+                <p>・新しくオブジェクトを追加するときは上の「追加」から「メッシュ」を選択し、その中にある立方体などを選択しましょう。
+                    ショートカットキーは「shift＋A」です。
+                </p>
+                
+                <!-- ★追加：ショートカットキーの項目 -->
+                <div class="icon-text-box">
+                    <span class="icon-text">Shift ＋ A : ➃オブジェクトの追加</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/Object_moving.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➄ 移動・回転・拡大・縮小：「移動」</strong></p>
+                <p>・オブジェクトを移動させたい時はGキーを押すことで移動させることができます。
+                     またGキーを押した後に、X、Y、を押すと、その方向に固定して移動できます。</p>
+                
+                <!-- ★追加：軸固定移動の手順図（既存のicon-text-boxを活用） -->
+                <div class="icon-text-box axis-moving-info">
+                    <p class="axis-diagram-intro">軸固定移動の手順:</p>
+                    
+                    <div class="axis-diagram-content">
+                        <span class="key-cap primary">G</span>
+                        <span class="diagram-separator">押した後に...</span>
+                        <div class="axis-choices">
+                            <div class="axis-choice">
+                                <span class="key-cap x-axis">X</span><span class="diagram-text">: X軸（赤）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap y-axis">Y</span><span class="diagram-text">: Y軸（緑）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap z-axis">Z</span><span class="diagram-text">: Z軸（青）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/Object_rotation.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➄ 移動・回転・拡大・縮小：「回転」</strong></p>
+                <p>・オブジェクトを回転させたい時はRキーを押すことで回転させることができます。
+                    またRキーを押した後に、X、Y、Zを押すと、その軸を固定して回転させることが
+                    できます。</p>
+            <!-- ★追加：軸固定回転の手順図 -->
+                <div class="icon-text-box axis-moving-info">
+                    <p class="axis-diagram-intro">軸固定回転の手順:</p>
+                    
+                    <div class="axis-diagram-content">
+                        <span class="key-cap primary">R</span>
+                        <span class="diagram-separator">押した後に...</span>
+                        <div class="axis-choices">
+                            <div class="axis-choice">
+                                <span class="key-cap x-axis">X</span><span class="diagram-text">: X軸（赤）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap y-axis">Y</span><span class="diagram-text">: Y軸（緑）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap z-axis">Z</span><span class="diagram-text">: Z軸（青）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="content-section row-layout">
+            <div class="large-image-container">
+                <video src="Video/Object_scale.mp4" class="large-image" autoplay loop muted playsinline></video>
+            </div>
+            <div class="text-content">
+                <p class="step-title"><strong>➄ 移動・回転・拡大・縮小：「拡大・縮小」</strong></p>
+                <p>・オブジェクトを拡大、縮小させたいときはSキーを押すことで拡大,縮小させる
+                     ことができます。またSキーを押した後に、X、Y、Zを押すと、その方向に拡大、
+                     縮小させることができます。</p>
+            <!-- ★追加：軸固定拡大・縮小の手順図 -->
+                <div class="icon-text-box axis-moving-info">
+                    <p class="axis-diagram-intro">軸固定拡大・縮小の手順:</p>
+                    
+                    <div class="axis-diagram-content">
+                        <span class="key-cap primary">S</span>
+                        <span class="diagram-separator">押した後に...</span>
+                        <div class="axis-choices">
+                            <div class="axis-choice">
+                                <span class="key-cap x-axis">X</span><span class="diagram-text">: X軸（赤）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap y-axis">Y</span><span class="diagram-text">: Y軸（緑）</span>
+                            </div>
+                            <div class="axis-choice">
+                                <span class="key-cap z-axis">Z</span><span class="diagram-text">: Z軸（青）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="finish-text">これで基本操作は終わりです！お疲れ様でした！</h2>
+        <div class="bottom-nav">
+            <a href="main-setting.html" class="nav-btn btn-home">←メイン設定編</a>
+            <a href="home.html" class="nav-btn btn-next">ホームに戻る</a>
+        </div>
+    </div>
+
+</body>
+</html>
